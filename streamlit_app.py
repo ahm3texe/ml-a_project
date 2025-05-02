@@ -21,7 +21,7 @@ st.markdown("Bu uygulama, girdiğiniz normalize edilmiş değerlere göre obezit
 
 # 🧮 Kullanıcıdan veri al
 input_data = {}
-st.markdown("### 🎛 Değerleri Giriniz")
+st.markdown("### Değerleri Giriniz")
 for key, label in selected_features.items():
     input_data[key] = st.slider(label, min_value=0.0, max_value=1.0, value=0.5, step=0.01)
 
