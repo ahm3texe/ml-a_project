@@ -32,9 +32,9 @@ if st.button("📊 Tahmini Göster"):
     prediction = model.predict(input_df)[0]
 
     if prediction:
-        st.error("⚠️ Obezite Riski Var", icon="⚠️")
+        st.error("⚠️ Obezite Riski Var")
     else:
-        st.success("✅ Obezite Riski Yok", icon="✅")
+        st.success("✅ Obezite Riski Yok")
 
     # Girdi özetini göster
     st.markdown("### 📋 Girdi Özeti")
