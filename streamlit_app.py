@@ -7,7 +7,7 @@ import pickle
 model = pickle.load(open("best_model.pkl", "rb"))
 
 # Kullanılacak özellikler
-selected_features = ['YearStart', 'YearEnd', 'Data_Value_Alt', 'Low_Confidence_Limit', 'High_Confidence_Limit']
+selected_features = ['Data_Value_Alt', 'Low_Confidence_Limit', 'High_Confidence_Limit', 'Sample_Size', 'YearEnd']
 
 st.title("🔍 Obezite Risk Tahmini")
 st.markdown("Girdiğiniz değerlere göre obezite riski olup olmadığını tahmin eder.")
@@ -15,7 +15,7 @@ st.markdown("Girdiğiniz değerlere göre obezite riski olup olmadığını tahm
 # Kullanıcıdan veri al
 input_data = {}
 for feature in selected_features:
-    input_data[feature] = st.slider(f"{feature}", min_value=0.0, max_value=1.0, step=0.01)
+    input_data[feature] = st.slider(f"{feature}", 0.0, 1.0, 0.5, 0.01)
 
 input_df = pd.DataFrame([input_data])
 
